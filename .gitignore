@@ -1,0 +1,5 @@
+.env
+venv/
+faiss_index/
+app.log
+data.pdf
