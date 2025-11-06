@@ -15,7 +15,7 @@ Turist Support is a chatbot designed to enchange people's experience while searc
 
 # System worflow
 
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embedded/a650924b-44d1-4024-be98-186dfa426f40" id="Obw6gmoZ7G57"></iframe></div>
+<img width="545" height="946" alt="Captura" src="https://github.com/user-attachments/assets/80c7623a-1876-4c66-87e7-cc81f936fb35" />
 
 # How to Run:
 1.  Clone this repository.
