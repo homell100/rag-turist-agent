@@ -24,6 +24,6 @@ Turist Support is a chatbot designed to enchange people's experience while searc
 4.  Install dependencies: `pip install -r requirements.txt`
 5.  Create a `.env` file in the root folder and add your API key (either Google or OpenAI):
     `GOOGLE_API_KEY="your_api_key_here"`
-6.  Download the PDF from `[https://www.gencat.cat/territori/informacio_publica/PTP_Penedes_AP/A_09_Turisme_Penedes.pdf]` and save it in the root folder as `data.pdf`.
+6.  Download the PDF from (here)[https://www.gencat.cat/territori/informacio_publica/PTP_Penedes_AP/A_09_Turisme_Penedes.pdf] and save it in the root folder as `data.pdf`.
 7.  Run the cells in `main.ipynb` from top to bottom.
 
