@@ -15,7 +15,8 @@ Turist Support is a chatbot designed to enchange people's experience while searc
 
 # System worflow
 
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embedded/a650924b-44d1-4024-be98-186dfa426f40" id="Obw6gmoZ7G57"></iframe></div>
+<img width="545" height="946" alt="Captura" src="https://github.com/user-attachments/assets/a756cbaa-d148-462f-a91d-c9d2d0c37e5b" />
+
 
 # Intructions:
 Source of information (save in pdf format, inside main folder with name data.pdf): https://www.gencat.cat/territori/informacio_publica/PTP_Penedes_AP/A_09_Turisme_Penedes.pdf
