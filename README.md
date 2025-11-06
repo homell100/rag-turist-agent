@@ -1,9 +1,26 @@
-Intructions:
+# Introduction:
+Turist Support is a chatbot designed to enchange people's experience while searching for turist experiences around the area of Penedés, Spain. Leveraging a langgraph-driven workflow, a turist agent accesses the official turist guide while supported by a weather API.
 
+# Features:
+- Multiconversational chatbot
+- Agent supported by RAG system feeded with local official guides
+- Agent supported with local weather forecasts
+
+# How it works:
+1. Agent receivex messsage from user
+2. A first llm refines the prompt to enhance search with the RAG system.
+3. The RAG system extracts the most useful information from the official guide and delivers it to a second llm.
+4. This second llm  decides if it is necessary to use the weather tool
+5. With all the information, the second llm provides the user with a proper answer
+
+# System worflow
+
+https://lucid.app/lucidchart/a650924b-44d1-4024-be98-186dfa426f40/edit?viewport_loc=-459%2C304%2C2992%2C1391%2C0_0&invitationId=inv_acfd3e31-ca73-4458-a4c5-51d85c16ca17
+
+# Intructions:
 Source of information (save in pdf format, inside main folder with name data.pdf): https://www.gencat.cat/territori/informacio_publica/PTP_Penedes_AP/A_09_Turisme_Penedes.pdf
 
-Solution design:
-
+# Solution design:
 The goal of this project was to design a functional agent which would assist us regarding questions about a turist area. To be able to provide such turist information to the agent we have built a RAG system supported on a pdf with extensive turist information about the area of Penedes (An area of Spain). The agent is stateful and conversational, created using LangGraph. 
 
 The default state of LangChain is improved by providing a way of remembering the context retrieved by the RAG, as it is fundamental to allow us to mesure the quality of the responses, and the transformed version of the user’s original prompt for better usage within the RAG system.
