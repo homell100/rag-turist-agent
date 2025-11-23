@@ -3,7 +3,7 @@ The goal of this project was to design a functional agent which would assist us 
 
 The default state of LangChain is improved by providing a way of remembering the context retrieved by the RAG, as it is fundamental to allow us to mesure the quality of the responses, and the transformed version of the user’s original prompt for better usage within the RAG system.
 
-The graph is mainly composed of the reqriting node (assigned with transforming the original user’s prompt), the rag node (responsible of retriving useful context considering such user’s transformed prompt), agent node (the main brain of the solution) and the tool node (weather tool).
+The graph is mainly composed of the rewriting node (assigned with transforming the original user’s prompt), the rag node (responsible of retriving useful context considering such user’s transformed prompt), agent node (the main brain of the solution) and the tool node (weather tool).
 
 For simplicity, the weather tool has been mocked and does not make any real API call but returns different results depeneding on the day of the week, while mantaining error control.
 
@@ -30,14 +30,24 @@ The weather tool API was mocked due to simplicity and billing issues, as the fre
 Four main metrics were used to evaluate the quality of our solution:
     • Context precision: A manual mesure comparing the amount of useful chuncks of information regarding the user prompt over the total amount of retrieved chuncks. With a final score of 43% we deduce that our RAG is returning many chuncks of information to the context which do not provide useful information for our answer.
 
-    • Faithfulness: An additional llm was used to automatically assess whether each sentence in the agent’s answers was based in any retrieved chunk from the context. TBC
-    • RAG delay: A visual clue regarding the comparing of ammount of tokens in the user prompts vs the amount of time needed for the agent to give an answer. TBC
-    • Tool call precision: A mesure for the correctness of our agent regarding the need to make a tool call.
+    • Faithfulness: An additional llm was used to automatically assess whether each sentence in the agent’s answers was based in any retrieved chunk from the context. A result of 78% confirms us that the chunck returned by the RAG system were inedeed useful in the answers formed by the agent.
+    • RAG delay: A visual clue regarding the comparing of ammount of tokens in the user prompts vs the amount of time needed for the agent to give an answer. A steady answer only containing one outlier informs us of a consistem system.
+    • Tool call precision: A mesure for the correctness of our agent regarding the need to make a tool call. Even thought the sample case was small, we received a total success.
+
 # Limitations:
+
+- Vector Store Persistence: Ephemeral memory in FAISS, meaning the index must be rebuild every time the application is restarted (Not the right way in a productive enviroment, acceptable in a play-test approach)
+
+- PDF Parsing: PyPDFLoader treast text linearly, making the analysis of tables or other special elements in the source document lose their semantic structure.
+
+- Constant Latency: The system is linear making any prompt visit the rewriter, the RAG system and finally the llm agent, adding a time delay in each step
+
+- Multilingual Embeddings: Even thought the embedding model was specifically chose for a multilingual approach, special oddities in the text might bring difficulties when finding similarities between the user's prompt and the source data.
+
 # Future improvements:
 
-Improve context precision: A 43% can be improved by using different chuncking strategies (i.e., lowering the amount of retrieved chuncks or the maximum threshold in chunck_size) or a better mebedding model.
+- Improve context precision: A 43% can be improved by using different chuncking strategies (i.e., lowering the amount of retrieved chuncks or the maximum threshold in chunck_size) or a better mebedding model.
 
-Improve RAG strategy: Instead of retrieving on every message, a router node could be added to the graph, allowing the agent to decide whether to call the RAG or just answer from memory.
+- Improve RAG strategy: Instead of retrieving on every message, a router node could be added to the graph, allowing the agent to decide whether to call the RAG or just answer from memory.
 
-Improve our knowledge base: Instead of a single pdf, another source of data could be use. In suc
+- Improve our knowledge base: Instead of a single pdf, another source of data could be use. In suc
