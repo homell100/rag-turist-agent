@@ -15,7 +15,7 @@ Turist Support is a chatbot designed to enchange people's experience while searc
 
 # System worflow
 
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embedded/a650924b-44d1-4024-be98-186dfa426f40" id="Obw6gmoZ7G57"></iframe></div>
+<img width="545" height="946" alt="Captura" src="https://github.com/user-attachments/assets/80c7623a-1876-4c66-87e7-cc81f936fb35" />
 
 # How to Run:
 1.  Clone this repository.
@@ -24,6 +24,6 @@ Turist Support is a chatbot designed to enchange people's experience while searc
 4.  Install dependencies: `pip install -r requirements.txt`
 5.  Create a `.env` file in the root folder and add your API key (either Google or OpenAI):
     `GOOGLE_API_KEY="your_api_key_here"`
-6.  Download the PDF from `[https://www.gencat.cat/territori/informacio_publica/PTP_Penedes_AP/A_09_Turisme_Penedes.pdf]` and save it in the root folder as `data.pdf`.
+6.  Download the guide (PDF format) from [here](https://www.gencat.cat/territori/informacio_publica/PTP_Penedes_AP/A_09_Turisme_Penedes.pdf) and save it in the root folder as `data.pdf`
 7.  Run the cells in `main.ipynb` from top to bottom.
 
